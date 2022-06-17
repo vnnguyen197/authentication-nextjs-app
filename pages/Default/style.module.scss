@@ -1,0 +1,10 @@
+.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: violet;
+  &__h1 {
+    color: #000;
+  }
+}

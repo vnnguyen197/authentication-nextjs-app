@@ -1,0 +1,10 @@
+.detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: beige;
+  &__h1{
+    color: brown;
+  }
+}
