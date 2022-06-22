@@ -1,4 +1,3 @@
-import Link from "next/link";
 import * as React from "react";
 import style from "./style.module.scss";
 import { useForm } from "react-hook-form";
@@ -10,7 +9,7 @@ export default function Login() {
   const router = useRouter();
   const onSubmit = async (dt: any) => {
     console.log(dt);
-    const { data: token } = await authAPI(dt);
+    const { data: token } = await authAPI.getLogin(dt);
     try {
       localStorage.setItem("token", token);
       // if (localStorage.getItem("url_old")) {
