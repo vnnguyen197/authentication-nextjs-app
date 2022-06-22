@@ -13,9 +13,9 @@ export default function Login() {
     const { data: token } = await authAPI(dt);
     try {
       localStorage.setItem("token", token);
-      if (localStorage.getItem("url_old")) {
-        setTimeout(() => router.push(localStorage.getItem("url_old")), 2000);
-      } else setTimeout(() => router.push("/homepage"), 2000);
+      // if (localStorage.getItem("url_old")) {
+      //   setTimeout(() => router.push(localStorage.getItem("url_old")), 2000);
+      // } else setTimeout(() => router.push("/homepage"), 2000);
       router.push("/homepage");
     } catch (error: any) {
       alert(error.message);
@@ -48,7 +48,7 @@ export default function Login() {
         <div className={style.login__content}>
           <div className={style.login__user}>
             <label style={{ marginRight: "10px" }}>Username</label>
-            <input {...register("username", { required: "Please enter your user name.",})}/>
+            <input type="text" {...register("username", { required: "Please enter your user name.",})}/>
           </div>
           <div className={style.login__pass}>
             <label style={{ marginRight: "15px" }}>Password</label>
