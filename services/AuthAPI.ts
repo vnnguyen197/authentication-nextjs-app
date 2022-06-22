@@ -1,7 +1,7 @@
 import axiosClient from "../api/api";
 
 const authAPI = (data:any) => {
-    const url = `process.env.REACT_APP_KEY_API`;
+    const url = `process.env.NEXT_PUBLIC_API_URL`;
     const params = {
       page: data.page,
     };

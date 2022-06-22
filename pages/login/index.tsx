@@ -2,9 +2,9 @@ import Link from "next/link";
 import * as React from "react";
 import style from "./style.module.scss";
 import { useForm } from "react-hook-form";
-import { authAPI } from "../../services/AuthAPI";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import authAPI from "../../services/AuthAPI";
 
 export default function Login() {
   const router = useRouter();
