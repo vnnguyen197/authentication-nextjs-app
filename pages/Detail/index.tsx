@@ -1,12 +1,14 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
+import withRoute from '../../hocs/withRoute';
+import authAPI from '../../services/AuthAPI';
 import style from './style.module.scss'
 
-export interface IDetailProps {
-}
+export interface IDetailProps {}
 
-export default function Detail (props: IDetailProps) {
+function Detail (props: IDetailProps) {
   const router = useRouter();
 
   const logout = () => {
@@ -16,6 +18,9 @@ export default function Detail (props: IDetailProps) {
 
   return (
     <div className={style.detail}>
+      <Head>
+        <title>Detail</title>
+      </Head>
            <h1 className={style.detail__h1}>Detail Authentication</h1>
            <button className={style.detail__button} onClick={logout}>
             <Link href="/">LOGOUT</Link>
@@ -23,3 +28,4 @@ export default function Detail (props: IDetailProps) {
     </div>
   );
 }
+export default withRoute(Detail);

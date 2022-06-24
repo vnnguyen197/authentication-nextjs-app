@@ -32,10 +32,8 @@
     color: #f8b333;
     &:hover {
       cursor: pointer;
-      background-color: rgba(255, 192, 203, 0.466);
-    }
-    &--btn{
       background-color: blue !important;
+      color: #ffff;
     }
   }
 }

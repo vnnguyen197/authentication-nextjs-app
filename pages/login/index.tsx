@@ -4,29 +4,25 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import authAPI from "../../services/AuthAPI";
+import withRoute from "../../hocs/withRoute";
 
-export default function Login() {
+function Login() {
   const router = useRouter();
   const onSubmit = async (dt: any) => {
     console.log(dt);
-    const { data: token } = await authAPI.getLogin(dt);
+    const { data } = await authAPI.Login(dt);
     try {
-      localStorage.setItem("token", token);
-      // if (localStorage.getItem("url_old")) {
-      //   setTimeout(() => router.push(localStorage.getItem("url_old")), 2000);
-      // } else setTimeout(() => router.push("/homepage"), 2000);
-      router.push("/homepage");
-    } catch (error: any) {
+      localStorage.setItem("token", data.token);
+      router.push("/")
+    } 
+    catch (error: any) {
       alert(error.message);
     }
   };
-  // call api login params is dt
-  // if login success add token to localStorage -> Redirect to home with status is logined
-  // if false toast a message error
-  // }
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
+
   // if (token) {
   //   localStorage.setItem("token", token);
   //   if (localStorage.getItem("url_old")) {
@@ -36,6 +32,10 @@ export default function Login() {
   // }
   // else {
   //   alert("abc");
+  // }
+  // call api login params is dt
+  // if login success add token to localStorage -> Redirect to home with status is logined
+  // if false toast a message error
   // }
   return (
     <div className={style.login}>
@@ -51,7 +51,7 @@ export default function Login() {
           </div>
           <div className={style.login__pass}>
             <label style={{ marginRight: "15px" }}>Password</label>
-            <input type="password" {...register("password", { required: "Please enter your pass word.", })}/>
+            <input type="password" {...register("password", { required: "Please enter your password.", })}/>
           </div>
         </div>
         <div className={style.login__button}>
@@ -63,3 +63,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default withRoute(Login, {isProtected:false});
