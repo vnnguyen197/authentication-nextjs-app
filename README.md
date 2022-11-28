@@ -1,2 +1,1 @@
-# authentication-nextjs
-# authentication-nextjs
+# authentication-nextjs-app
