@@ -1,0 +1,28 @@
+.detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: beige;
+  flex-direction: column;
+  &__h1{
+    color: brown;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.382);
+    background-color: #ffff;
+    font-size: 15px;
+    font-weight: bold;
+    color: #f8b333;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 192, 203, 0.466);
+    }
+  }
+}

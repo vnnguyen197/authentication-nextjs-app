@@ -1,0 +1,30 @@
+.default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 100vh;
+  background: violet;
+  &__h1 {
+    color: #000;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.382);
+    background-color: blue;
+    font-size: 15px;
+    font-weight: bold;
+    color: #f8b333;
+    &:hover {
+      cursor: pointer;
+      background-color: #ffff;
+      color: #000;
+    }
+  }
+}
